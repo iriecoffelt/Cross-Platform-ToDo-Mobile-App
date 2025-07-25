@@ -138,7 +138,11 @@ xcrun simctl boot "iPhone 16 Pro"
 # Run iOS app
 npm run ios
 ```
-
+**IOS DEVICE**
+```bash
+# Run on physical iOS device
+npx react-native run-ios --device
+```
 **Android Emulator:**
 ```bash
 # Set up environment variables
