@@ -207,6 +207,111 @@ npm run android
 ./scripts/android-emulator.sh list
 ```
 
+## 📁 Project Structure & Development Guide
+
+### 🎯 **Files/Folders with YOUR APP CODE:**
+
+**Main Application Files:**
+```
+📄 App.tsx                 # 🎯 MAIN APP ENTRY POINT - Your primary app component
+📄 index.js                # 🎯 APP BOOTSTRAP - Entry point for React Native
+```
+
+**Your Source Code:**
+```
+📁 src/                    # 🎯 YOUR MAIN CODE DIRECTORY
+├── 📁 components/         # 🎯 REUSABLE UI COMPONENTS
+│   ├── 📄 TodoItem.tsx   # Individual todo item component
+│   ├── 📄 TodoInput.tsx  # Input field component
+│   ├── 📄 TodoList.tsx   # List of todos component
+│   ├── 📄 TodoStats.tsx  # Statistics display component
+│   └── 📄 index.ts       # Component exports
+├── 📁 types/              # 🎯 TYPE DEFINITIONS
+│   └── 📄 index.ts       # TypeScript interfaces
+└── 📁 utils/              # 🎯 UTILITY FUNCTIONS
+    └── 📄 index.ts       # Helper functions
+```
+
+**Tests:**
+```
+📁 __tests__/              # 🎯 YOUR TEST FILES
+└── 📄 App-test.tsx       # Tests for main App component
+```
+
+**Documentation & Scripts:**
+```
+📄 README.md               # 🎯 PROJECT DOCUMENTATION
+📁 scripts/                # 🎯 YOUR HELPER SCRIPTS
+├── 📄 ios-simulator.sh   # iOS simulator management
+└── 📄 android-emulator.sh # Android emulator management
+```
+
+### ❌ **Files/Folders to AVOID Editing:**
+
+**Build & Configuration Files:**
+```
+📁 ios/                    # iOS native code - avoid unless you need native iOS features
+📁 android/                # Android native code - avoid unless you need native Android features
+📁 node_modules/           # Dependencies - never edit manually
+📁 vendor/                 # React Native vendor files - never edit
+📁 .bundle/                # Build artifacts - auto-generated
+📁 ios/build/              # iOS build output - auto-generated
+📁 android/build/          # Android build output - auto-generated
+📁 ios/Pods/               # iOS dependencies - auto-generated
+📁 android/.gradle/        # Android build cache - auto-generated
+📁 android/.kotlin/        # Kotlin cache - auto-generated
+```
+
+**Configuration Files (Edit with Caution):**
+```
+📄 package.json            # Dependencies and scripts - edit carefully
+📄 package-lock.json       # Lock file - auto-generated
+📄 tsconfig.json           # TypeScript config - edit carefully
+📄 metro.config.js         # Metro bundler config - edit carefully
+📄 babel.config.js         # Babel config - edit carefully
+📄 jest.config.js          # Test config - edit carefully
+📄 .eslintrc.js            # Linting rules - edit carefully
+📄 .prettierrc.js          # Code formatting - edit carefully
+📄 ios/Podfile             # iOS dependencies - edit carefully
+📄 android/build.gradle    # Android build config - edit carefully
+📄 android/gradle.properties # Android properties - edit carefully
+```
+
+### 🎯 **Where to Focus Your Development:**
+
+**Primary Development Areas:**
+1. **`App.tsx`** - Main app logic and state management
+2. **`src/components/`** - All your reusable UI components
+3. **`src/types/`** - TypeScript type definitions
+4. **`src/utils/`** - Helper functions and utilities
+5. **`__tests__/`** - Your test files
+
+**Secondary Development Areas:**
+1. **`README.md`** - Documentation updates
+2. **`scripts/`** - Custom helper scripts
+3. **`package.json`** - Adding new dependencies
+
+**Avoid Unless Necessary:**
+1. **`ios/` and `android/`** - Only for native code integration
+2. **Configuration files** - Only when you need to change build/test settings
+3. **Auto-generated files** - Never edit these
+
+### 💡 **Quick Reference:**
+
+**✅ Safe to Edit:**
+- `App.tsx` and `src/` folder
+- `__tests__/` folder
+- `README.md` and `scripts/` folder
+
+**⚠️ Edit with Caution:**
+- Configuration files (`.json`, `.js` config files)
+- `package.json` (for dependencies)
+
+**❌ Avoid Editing:**
+- `ios/` and `android/` folders
+- `node_modules/` and build folders
+- Auto-generated files
+
 ## 📦 Build
 
 ### iOS
