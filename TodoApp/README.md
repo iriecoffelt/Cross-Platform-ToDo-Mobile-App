@@ -111,6 +111,102 @@ Run the test suite:
 npm test
 ```
 
+## 📱 Simulator/Emulator Management
+
+### Quick Scripts
+
+We've created convenient scripts to manage iOS simulators and Android emulators:
+
+**iOS Simulator:**
+```bash
+# Kill all iOS simulators
+./scripts/ios-simulator.sh kill
+
+# List available iOS simulators
+./scripts/ios-simulator.sh list
+
+# Start iPhone 16 Pro simulator
+./scripts/ios-simulator.sh start
+
+# Start a specific simulator
+./scripts/ios-simulator.sh start "iPhone 16 Pro Max"
+
+# Run the iOS app
+./scripts/ios-simulator.sh run
+```
+
+**Android Emulator:**
+```bash
+# Kill Android emulator
+./scripts/android-emulator.sh kill
+
+# List available Android emulators
+./scripts/android-emulator.sh list
+
+# Start Pixel_7_API_35 emulator
+./scripts/android-emulator.sh start
+
+# Start a specific emulator
+./scripts/android-emulator.sh start "Pixel_7_API_35"
+
+# Run the Android app
+./scripts/android-emulator.sh run
+```
+
+### Manual Commands
+
+**iOS Simulator:**
+```bash
+# Kill all simulators
+xcrun simctl shutdown all
+
+# List available devices
+xcrun simctl list devices
+
+# Start specific device
+xcrun simctl boot "iPhone 16 Pro"
+
+# Run iOS app
+npm run ios
+```
+
+**Android Emulator:**
+```bash
+# Set up environment variables
+export ANDROID_HOME="/opt/homebrew/share/android-commandlinetools"
+export PATH="/opt/homebrew/opt/openjdk@17/bin:$ANDROID_HOME/cmdline-tools/latest/bin:$ANDROID_HOME/platform-tools:$ANDROID_HOME/emulator:$PATH"
+
+# Kill emulator
+adb kill-server
+
+# List available emulators
+emulator -list-avds
+
+# Start specific emulator
+emulator -avd Pixel_7_API_35
+
+# Run Android app
+npm run android
+```
+
+### Quick Daily Commands
+
+```bash
+# Kill everything and start fresh
+./scripts/ios-simulator.sh kill
+./scripts/android-emulator.sh kill
+
+# Run on iOS
+./scripts/ios-simulator.sh run
+
+# Run on Android
+./scripts/android-emulator.sh run
+
+# List all available devices
+./scripts/ios-simulator.sh list
+./scripts/android-emulator.sh list
+```
+
 ## 📦 Build
 
 ### iOS
